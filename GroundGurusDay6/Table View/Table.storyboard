@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bCP-jX-L77">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Sample View Controller-->
+        <scene sceneID="yd8-g9-EcT">
+            <objects>
+                <viewController id="bCP-jX-L77" customClass="TableViewSampleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hr9-Jn-2CT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0up-zT-HBu">
+                                <rect key="frame" x="19.999999999999993" y="36" width="103.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIs-Cv-Zo7">
+                                <rect key="frame" x="355" y="31.666666666666671" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="didTapClose:" destination="bCP-jX-L77" eventType="touchUpInside" id="dNt-gD-6OV"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FHb-hU-avr">
+                                <rect key="frame" x="16" y="73" width="382" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bCP-jX-L77" id="Uvz-n4-lvW"/>
+                                    <outlet property="delegate" destination="bCP-jX-L77" id="5PZ-kP-IDd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t1c-kE-CCb" firstAttribute="bottom" secondItem="FHb-hU-avr" secondAttribute="bottom" constant="16" id="404-BP-xJY"/>
+                            <constraint firstItem="t1c-kE-CCb" firstAttribute="trailing" secondItem="FHb-hU-avr" secondAttribute="trailing" constant="16" id="8hf-op-a8v"/>
+                            <constraint firstItem="0up-zT-HBu" firstAttribute="leading" secondItem="t1c-kE-CCb" secondAttribute="leading" constant="20" id="QGY-jl-9Mg"/>
+                            <constraint firstItem="0up-zT-HBu" firstAttribute="top" secondItem="t1c-kE-CCb" secondAttribute="top" constant="16" id="S96-1b-U47"/>
+                            <constraint firstItem="t1c-kE-CCb" firstAttribute="trailing" secondItem="KIs-Cv-Zo7" secondAttribute="trailing" constant="20" id="kCi-pt-brR"/>
+                            <constraint firstItem="KIs-Cv-Zo7" firstAttribute="centerY" secondItem="0up-zT-HBu" secondAttribute="centerY" id="oVr-Wu-Kod"/>
+                            <constraint firstItem="FHb-hU-avr" firstAttribute="top" secondItem="0up-zT-HBu" secondAttribute="bottom" constant="16" id="tXB-p0-9j2"/>
+                            <constraint firstItem="FHb-hU-avr" firstAttribute="leading" secondItem="t1c-kE-CCb" secondAttribute="leading" constant="16" id="zYa-sg-EzI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t1c-kE-CCb"/>
+                    </view>
+                    <connections>
+                        <outlet property="contactListTableView" destination="FHb-hU-avr" id="uzp-cB-FaM"/>
+                        <segue destination="cHO-Bp-kbd" kind="show" identifier="contactDetailSegue" id="Z5H-h6-0jj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0us-qv-xIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="503" y="20"/>
+        </scene>
+        <!--Contact Details View Controller-->
+        <scene sceneID="lVR-Nd-7GH">
+            <objects>
+                <viewController id="cHO-Bp-kbd" customClass="ContactDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EYQ-cI-KXR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebO-QY-k5P">
+                                <rect key="frame" x="20" y="60" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-cT-gdB">
+                                <rect key="frame" x="359" y="55.666666666666657" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="didTapClose:" destination="bCP-jX-L77" eventType="touchUpInside" id="cqE-bj-EIg"/>
+                                    <action selector="didTapClose:" destination="cHO-Bp-kbd" eventType="touchUpInside" id="jYV-n7-y2a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yCg-cT-gdB" firstAttribute="centerY" secondItem="ebO-QY-k5P" secondAttribute="centerY" id="47C-ks-5NL"/>
+                            <constraint firstItem="ebO-QY-k5P" firstAttribute="leading" secondItem="BID-d3-Ncn" secondAttribute="leading" constant="20" id="6pM-JW-TWA"/>
+                            <constraint firstItem="BID-d3-Ncn" firstAttribute="trailing" secondItem="yCg-cT-gdB" secondAttribute="trailing" constant="16" id="i89-aa-JfY"/>
+                            <constraint firstItem="ebO-QY-k5P" firstAttribute="top" secondItem="BID-d3-Ncn" secondAttribute="top" constant="40" id="tnk-Em-XJn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BID-d3-Ncn"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="ebO-QY-k5P" id="Vyg-B7-G7B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7d-mj-GHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262" y="15"/>
+        </scene>
+    </scenes>
+</document>
